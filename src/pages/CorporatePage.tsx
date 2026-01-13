@@ -129,7 +129,7 @@ export default function CorporatePage() {
   };
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'MWK' }).format(amount);
   };
 
   return (
