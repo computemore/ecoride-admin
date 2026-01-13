@@ -308,6 +308,7 @@ export interface Promotion {
   isActive: boolean;
   isReferralPromo: boolean;
   applicableTiers: string;
+  eligibleRideTypes?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -326,6 +327,7 @@ export interface CreatePromotionRequest {
   startsAt?: string;
   expiresAt?: string;
   applicableTiers?: string;
+  eligibleRideTypes?: string;
   isReferralPromo?: boolean;
 }
 
@@ -342,6 +344,7 @@ export interface UpdatePromotionRequest {
   expiresAt?: string;
   isActive?: boolean;
   applicableTiers?: string;
+  eligibleRideTypes?: string;
 }
 
 // =====================================================

@@ -19,6 +19,7 @@ interface PromotionFormData {
   startsAt: string;
   expiresAt: string;
   applicableTiers: string;
+  eligibleRideTypes: string;
   isReferralPromo: boolean;
 }
 
@@ -36,6 +37,7 @@ const defaultFormData: PromotionFormData = {
   startsAt: new Date().toISOString().slice(0, 16),
   expiresAt: '',
   applicableTiers: 'all',
+  eligibleRideTypes: 'all_normal',
   isReferralPromo: false,
 };
 
@@ -154,6 +156,7 @@ export default function PromotionsPage() {
       startsAt: formatDateForInput(promo.startsAt),
       expiresAt: formatDateForInput(promo.expiresAt),
       applicableTiers: promo.applicableTiers,
+      eligibleRideTypes: promo.eligibleRideTypes || 'all_normal',
       isReferralPromo: promo.isReferralPromo,
     });
     setModalMode('edit');
@@ -194,6 +197,7 @@ export default function PromotionsPage() {
         startsAt: formData.startsAt ? new Date(formData.startsAt).toISOString() : undefined,
         expiresAt: formData.expiresAt ? new Date(formData.expiresAt).toISOString() : undefined,
         applicableTiers: formData.applicableTiers,
+        eligibleRideTypes: formData.eligibleRideTypes,
         isReferralPromo: formData.isReferralPromo,
       };
       createMutation.mutate(request);
@@ -210,6 +214,7 @@ export default function PromotionsPage() {
         startsAt: formData.startsAt ? new Date(formData.startsAt).toISOString() : undefined,
         expiresAt: formData.expiresAt ? new Date(formData.expiresAt).toISOString() : undefined,
         applicableTiers: formData.applicableTiers,
+        eligibleRideTypes: formData.eligibleRideTypes,
       };
       updateMutation.mutate({ id: selectedPromotion.id, data: request });
     }
@@ -510,6 +515,10 @@ export default function PromotionsPage() {
                       <div className="font-medium capitalize">{selectedPromotion.applicableTiers.replace('_', ' ')}</div>
                     </div>
                     <div>
+                      <div className="text-sm text-gray-500">Eligible Ride Types</div>
+                      <div className="font-medium capitalize">{(selectedPromotion.eligibleRideTypes || 'all_normal').replace(/_/g, ' ')}</div>
+                    </div>
+                    <div>
                       <div className="text-sm text-gray-500">Referral Promo</div>
                       <div className="font-medium">{selectedPromotion.isReferralPromo ? 'Yes' : 'No'}</div>
                     </div>
@@ -735,6 +744,27 @@ export default function PromotionsPage() {
                       <option value="ecoride_fast">Ecoride Fast Only</option>
                       <option value="ecoride_luxury">Ecoride Luxury Only</option>
                     </select>
+                  </div>
+
+                  {/* Eligible Ride Types */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Eligible Ride Types
+                    </label>
+                    <select
+                      value={formData.eligibleRideTypes}
+                      onChange={(e) => setFormData({ ...formData, eligibleRideTypes: e.target.value })}
+                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                    >
+                      <option value="all_normal">All Normal (Fast &amp; Luxury)</option>
+                      <option value="ecoride_fast">Fast Only</option>
+                      <option value="ecoride_luxury">Luxury Only</option>
+                      <option value="ecoride_corporate">Corporate Only</option>
+                      <option value="all">All (including Corporate)</option>
+                    </select>
+                    <p className="text-xs text-gray-500 mt-1">
+                      "All Normal" excludes corporate rides. Use "Corporate Only" for corporate-exclusive promos.
+                    </p>
                   </div>
 
                   {/* Referral Promo - only on create */}
