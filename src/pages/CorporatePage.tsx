@@ -132,6 +132,10 @@ export default function CorporatePage() {
     return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'MWK' }).format(amount);
   };
 
+  const totalCorporateSpend = stats?.totalCorporateSpend ?? 0;
+  const platformShareTotal = totalCorporateSpend * 0.1;
+  const driverOrFleetShareTotal = totalCorporateSpend * 0.9;
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -173,10 +177,23 @@ export default function CorporatePage() {
         </div>
       )}
 
+      {stats && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="bg-white border border-gray-200 p-4">
+            <p className="text-sm text-gray-500">Platform (10%)</p>
+            <p className="text-2xl font-bold text-gray-900">{formatCurrency(platformShareTotal)}</p>
+          </div>
+          <div className="bg-white border border-gray-200 p-4">
+            <p className="text-sm text-gray-500">Driver/Fleet (90%)</p>
+            <p className="text-2xl font-bold text-gray-900">{formatCurrency(driverOrFleetShareTotal)}</p>
+          </div>
+        </div>
+      )}
+
       {/* Loading */}
       {isLoading && (
         <div className="flex justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent-600"></div>
+          <div className="animate-spin h-8 w-8 border-b-2 border-accent-600"></div>
         </div>
       )}
 
@@ -200,7 +217,7 @@ export default function CorporatePage() {
           <p className="mt-1 text-sm text-gray-500">Get started by adding a corporate client.</p>
           <button
             onClick={openCreateModal}
-            className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 font-medium text-sm"
+            className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-accent-600 text-white hover:bg-accent-700 font-medium text-sm"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -233,6 +250,12 @@ export default function CorporatePage() {
                     Total Spend
                   </th>
                   <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Platform (10%)
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Driver/Fleet (90%)
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     Status
                   </th>
                   <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -263,6 +286,12 @@ export default function CorporatePage() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-gray-900">
                       {formatCurrency(company.totalSpend)}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-900">
+                      {formatCurrency(company.totalSpend * 0.1)}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-gray-900">
+                      {formatCurrency(company.totalSpend * 0.9)}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
@@ -444,7 +473,7 @@ function CompanyDetailModal({ company, onClose }: { company: Company; onClose: (
   });
 
   const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'MWK' }).format(amount);
   };
 
   return (

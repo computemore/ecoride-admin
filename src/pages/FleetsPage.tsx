@@ -113,6 +113,10 @@ export default function FleetsPage() {
     });
   };
 
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'MWK' }).format(amount);
+  };
+
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -123,7 +127,7 @@ export default function FleetsPage() {
         </div>
         <button
           onClick={openCreateModal}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 font-medium text-sm"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-accent-600 text-white hover:bg-accent-700 font-medium text-sm"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -135,13 +139,13 @@ export default function FleetsPage() {
       {/* Loading */}
       {isLoading && (
         <div className="flex justify-center py-12">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent-600"></div>
+          <div className="animate-spin h-8 w-8 border-b-2 border-accent-600"></div>
         </div>
       )}
 
       {/* Empty state */}
       {!isLoading && fleets?.length === 0 && (
-        <div className="text-center py-12 bg-white rounded-xl border border-gray-200">
+        <div className="text-center py-12 bg-white border border-gray-200">
           <svg
             className="mx-auto h-12 w-12 text-gray-400"
             fill="none"
@@ -159,7 +163,7 @@ export default function FleetsPage() {
           <p className="mt-1 text-sm text-gray-500">Get started by creating a new fleet.</p>
           <button
             onClick={openCreateModal}
-            className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 font-medium text-sm"
+            className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-accent-600 text-white hover:bg-accent-700 font-medium text-sm"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -175,7 +179,7 @@ export default function FleetsPage() {
           {fleets.map((fleet) => (
             <div
               key={fleet.id}
-              className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow"
+              className="bg-white border border-gray-200 p-6 hover:shadow-md transition-shadow"
             >
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -212,25 +216,46 @@ export default function FleetsPage() {
                 </div>
               </div>
 
+              <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-500">Total Earnings</span>
+                  <span className="font-medium text-gray-900">
+                    {formatCurrency(fleet.totalEarnings ?? 0)}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-500">Platform (10%)</span>
+                  <span className="font-medium text-gray-900">
+                    {formatCurrency((fleet.totalEarnings ?? 0) * 0.1)}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-500">Fleet/Drivers (90%)</span>
+                  <span className="font-medium text-gray-900">
+                    {formatCurrency((fleet.totalEarnings ?? 0) * 0.9)}
+                  </span>
+                </div>
+              </div>
+
               <p className="text-xs text-gray-400 mt-4">Created {formatDate(fleet.createdAt)}</p>
 
               <div className="flex gap-2 mt-4">
                 <button
                   onClick={() => openViewModal(fleet)}
-                  className="flex-1 px-3 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 text-sm font-medium"
+                  className="flex-1 px-3 py-2 border border-gray-300 text-gray-700 hover:bg-gray-50 text-sm font-medium"
                 >
                   View
                 </button>
                 <button
                   onClick={() => openEditModal(fleet)}
-                  className="flex-1 px-3 py-2 border border-accent-300 text-accent-700 rounded-lg hover:bg-accent-50 text-sm font-medium"
+                  className="flex-1 px-3 py-2 border border-accent-300 text-accent-700 hover:bg-accent-50 text-sm font-medium"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => handleDelete(fleet)}
                   disabled={deleteMutation.isPending}
-                  className="px-3 py-2 border border-red-300 text-red-700 rounded-lg hover:bg-red-50 text-sm font-medium disabled:opacity-50"
+                  className="px-3 py-2 border border-red-300 text-red-700 hover:bg-red-50 text-sm font-medium disabled:opacity-50"
                 >
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -245,7 +270,7 @@ export default function FleetsPage() {
       {/* Create/Edit Modal */}
       {(modalMode === 'create' || modalMode === 'edit') && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl max-w-lg w-full p-6 max-h-[90vh] overflow-y-auto">
+          <div className="bg-white max-w-lg w-full p-6 max-h-[90vh] overflow-y-auto">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {modalMode === 'create' ? 'Create New Fleet' : 'Edit Fleet'}
             </h3>

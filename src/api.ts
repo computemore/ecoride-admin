@@ -384,8 +384,19 @@ export async function getPromoStats(days = 30): Promise<AdminPromoStats> {
 // =====================================================
 
 export async function getFleets(): Promise<Fleet[]> {
-  const response = await api.get<Fleet[]>('/fleets');
-  return response.data;
+  const response = await api.get<any>('/fleets', {
+    params: {
+      page: 1,
+      pageSize: 200,
+      sortBy: 'fleet_name',
+      sortOrder: 'asc',
+    },
+  });
+
+  const data = response.data;
+  if (Array.isArray(data)) return data as Fleet[];
+  if (data && Array.isArray(data.fleets)) return data.fleets as Fleet[];
+  return [];
 }
 
 export async function getFleet(id: string): Promise<Fleet> {

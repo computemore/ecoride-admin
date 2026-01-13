@@ -361,6 +361,8 @@ export interface Fleet {
   totalDrivers: number;
   activeDrivers: number;
   isActive: boolean;
+  totalTrips?: number;
+  totalEarnings?: number;
   createdAt: string;
   updatedAt: string;
 }

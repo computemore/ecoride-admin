@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Enforce purely rectangular UI across the admin portal.
+   This intentionally overrides any Tailwind `rounded-*` utilities. */
+* {
+  border-radius: 0 !important;
+}
+
 /* ============================================
    BASE STYLES (Consistent with demo-client)
    ============================================ */
