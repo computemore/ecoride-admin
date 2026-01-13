@@ -1,0 +1,12 @@
+{
+  "Mitsubishi Mirage": { "VehicleType": "compact", "Capacity": 4 },
+  "Mitsubishi Mira": { "VehicleType": "compact", "Capacity": 4 },
+  "Mitsubishi Attrage": { "VehicleType": "compact", "Capacity": 4 },
+  "Mitsubishi Lancer": { "VehicleType": "sedan", "Capacity": 5 },
+  "Mitsubishi ASX": { "VehicleType": "suv", "Capacity": 5 },
+  "Mitsubishi Eclipse Cross": { "VehicleType": "suv", "Capacity": 5 },
+  "Mitsubishi Outlander": { "VehicleType": "suv", "Capacity": 7 },
+  "Mitsubishi Pajero Sport": { "VehicleType": "suv", "Capacity": 7 },
+  "Mitsubishi Triton": { "VehicleType": "truck", "Capacity": 5 },
+  "Mitsubishi Xpander": { "VehicleType": "van", "Capacity": 7 }
+}

@@ -1,0 +1,16 @@
+{
+  "Hyundai i10": { "VehicleType": "compact", "Capacity": 4 },
+  "Hyundai i20": { "VehicleType": "compact", "Capacity": 4 },
+  "Hyundai i30": { "VehicleType": "compact", "Capacity": 5 },
+  "Hyundai Elantra": { "VehicleType": "sedan", "Capacity": 5 },
+  "Hyundai Sonata": { "VehicleType": "sedan", "Capacity": 5 },
+  "Hyundai Venue": { "VehicleType": "suv", "Capacity": 4 },
+  "Hyundai Kona": { "VehicleType": "suv", "Capacity": 5 },
+  "Hyundai Tucson": { "VehicleType": "suv", "Capacity": 5 },
+  "Hyundai Santa Fe": { "VehicleType": "suv", "Capacity": 7 },
+  "Hyundai Palisade": { "VehicleType": "suv", "Capacity": 7 },
+  "Hyundai Staria": { "VehicleType": "van", "Capacity": 8 },
+  "Hyundai Creta": { "VehicleType": "suv", "Capacity": 5 },
+  "Hyundai Ioniq 5": { "VehicleType": "suv", "Capacity": 5 },
+  "Hyundai Ioniq 6": { "VehicleType": "sedan", "Capacity": 5 }
+}

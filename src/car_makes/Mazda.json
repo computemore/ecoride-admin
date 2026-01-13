@@ -1,0 +1,14 @@
+{
+  "Mazda 2": { "VehicleType": "compact", "Capacity": 5 },
+  "Mazda 3": { "VehicleType": "sedan", "Capacity": 5 },
+  "Mazda Demio": { "VehicleType": "compact", "Capacity": 4 },
+  "Mazda 6": { "VehicleType": "sedan", "Capacity": 5 },
+  "Mazda CX-3": { "VehicleType": "suv", "Capacity": 5 },
+  "Mazda CX-30": { "VehicleType": "suv", "Capacity": 5 },
+  "Mazda CX-5": { "VehicleType": "suv", "Capacity": 5 },
+  "Mazda CX-50": { "VehicleType": "suv", "Capacity": 5 },
+  "Mazda CX-60": { "VehicleType": "suv", "Capacity": 5 },
+  "Mazda CX-90": { "VehicleType": "suv", "Capacity": 7 },
+  "Mazda BT-50": { "VehicleType": "truck", "Capacity": 5 },
+  "Mazda MX-5 Miata": { "VehicleType": "sedan", "Capacity": 2 }
+}

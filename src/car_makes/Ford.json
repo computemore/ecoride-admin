@@ -1,0 +1,16 @@
+{
+  "Ford Fiesta": { "VehicleType": "compact", "Capacity": 4 },
+  "Ford Focus": { "VehicleType": "compact", "Capacity": 5 },
+  "Ford Puma": { "VehicleType": "suv", "Capacity": 5 },
+  "Ford Kuga": { "VehicleType": "suv", "Capacity": 5 },
+  "Ford Edge": { "VehicleType": "suv", "Capacity": 5 },
+  "Ford Explorer": { "VehicleType": "suv", "Capacity": 7 },
+  "Ford Everest": { "VehicleType": "suv", "Capacity": 7 },
+  "Ford Ranger": { "VehicleType": "truck", "Capacity": 5 },
+  "Ford F-150": { "VehicleType": "truck", "Capacity": 5 },
+  "Ford Mustang": { "VehicleType": "other", "Capacity": 4 },
+  "Ford Mustang Mach-E": { "VehicleType": "suv", "Capacity": 5 },
+  "Ford Bronco": { "VehicleType": "suv", "Capacity": 5 },
+  "Ford Transit": { "VehicleType": "van", "Capacity": 12 },
+  "Ford Tourneo": { "VehicleType": "van", "Capacity": 8 }
+}

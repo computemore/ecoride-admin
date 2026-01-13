@@ -1,0 +1,13 @@
+{
+  "Volvo XC40": { "VehicleType": "suv", "Capacity": 5 },
+  "Volvo XC40 Recharge": { "VehicleType": "suv", "Capacity": 5 },
+  "Volvo C40 Recharge": { "VehicleType": "suv", "Capacity": 5 },
+  "Volvo XC60": { "VehicleType": "suv", "Capacity": 5 },
+  "Volvo XC90": { "VehicleType": "suv", "Capacity": 7 },
+  "Volvo S60": { "VehicleType": "sedan", "Capacity": 5 },
+  "Volvo S90": { "VehicleType": "sedan", "Capacity": 5 },
+  "Volvo V60": { "VehicleType": "sedan", "Capacity": 5 },
+  "Volvo V90": { "VehicleType": "sedan", "Capacity": 5 },
+  "Volvo EX30": { "VehicleType": "suv", "Capacity": 5 },
+  "Volvo EX90": { "VehicleType": "suv", "Capacity": 7 }
+}

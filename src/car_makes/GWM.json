@@ -1,0 +1,11 @@
+{
+  "GWM Steed": { "VehicleType": "truck", "Capacity": 5 },
+  "GWM P-Series": { "VehicleType": "truck", "Capacity": 5 },
+  "GWM Tank 300": { "VehicleType": "suv", "Capacity": 5 },
+  "GWM Tank 500": { "VehicleType": "suv", "Capacity": 5 },
+  "GWM Ora 03": { "VehicleType": "compact", "Capacity": 4 },
+  "GWM Ora 07": { "VehicleType": "compact", "Capacity": 4 },
+  "GWM Haval Jolion": { "VehicleType": "suv", "Capacity": 5 },
+  "GWM Haval H6": { "VehicleType": "suv", "Capacity": 5 },
+  "GWM Haval H9": { "VehicleType": "suv", "Capacity": 7 }
+}

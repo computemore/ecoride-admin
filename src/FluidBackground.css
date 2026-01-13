@@ -1,0 +1,55 @@
+/* FluidBackground.css */
+:root {
+  --ecoride-primary: #C73B0B;
+  --ecoride-dark: #2A0511;
+}
+
+.fluid-background-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  
+  /* Layer 1: Deep Base Color 
+     Layer 2: Radial Gradient for the "Glow" (Top Left)
+     Layer 3: Radial Gradient for the "Shadow" (Bottom Right)
+     Layer 4: Linear Sweep for the overall tone
+  */
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(100, 20, 60, 0.4), transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(200, 60, 30, 0.2), transparent 50%),
+    linear-gradient(135deg, 
+      #1a0508 0%, 
+      #4a0a15 30%, 
+      #8a1c1c 70%, 
+      #33080e 100%
+    );
+    
+  background-size: 200% 200%;
+  animation: fluidSway 15s ease infinite;
+  
+  /* Flexbox to center your login card perfectly */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Subtle animation to make the background feel "alive" */
+@keyframes fluidSway {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism Card Helper 
+   Use this for your Login Card or Side Panels to blend them
+*/
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05); /* Extremely low opacity white */
+  backdrop-filter: blur(16px);            /* The blur effect */
+  -webkit-backdrop-filter: blur(16px);    /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}

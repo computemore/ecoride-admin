@@ -1,0 +1,11 @@
+{
+  "Renault Kwid": { "VehicleType": "compact", "Capacity": 5 },
+  "Renault Triber": { "VehicleType": "van", "Capacity": 7 },
+  "Renault Kiger": { "VehicleType": "suv", "Capacity": 5 },
+  "Renault Clio": { "VehicleType": "compact", "Capacity": 5 },
+  "Renault Captur": { "VehicleType": "suv", "Capacity": 5 },
+  "Renault Duster": { "VehicleType": "suv", "Capacity": 5 },
+  "Renault Koleos": { "VehicleType": "suv", "Capacity": 5 },
+  "Renault Trafic": { "VehicleType": "van", "Capacity": 9 },
+  "Renault Megane": { "VehicleType": "compact", "Capacity": 5 }
+}

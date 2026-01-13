@@ -1,0 +1,18 @@
+{
+  "Peugeot 208": { "VehicleType": "compact", "Capacity": 4 },
+  "Peugeot 2008": { "VehicleType": "suv", "Capacity": 5 },
+  "Peugeot 308": { "VehicleType": "compact", "Capacity": 5 },
+  "Peugeot 3008": { "VehicleType": "suv", "Capacity": 5 },
+  "Peugeot 408": { "VehicleType": "sedan", "Capacity": 5 },
+  "Peugeot 508": { "VehicleType": "sedan", "Capacity": 5 },
+  "Peugeot 5008": { "VehicleType": "suv", "Capacity": 7 },
+  "Peugeot Traveller": { "VehicleType": "van", "Capacity": 8 },
+  "Peugeot Partner": { "VehicleType": "van", "Capacity": 5 },
+  "Peugeot Expert": { "VehicleType": "van", "Capacity": 5 },
+  "Peugeot e-208": { "VehicleType": "compact", "Capacity": 4 },
+  "Peugeot e-2008": { "VehicleType": "suv", "Capacity": 5 },
+  "Peugeot e-308": { "VehicleType": "compact", "Capacity": 5 },
+  "Peugeot e-3008": { "VehicleType": "suv", "Capacity": 5 },
+  "Peugeot e-408": { "VehicleType": "sedan", "Capacity": 5 },
+  "Peugeot e-508": { "VehicleType": "sedan", "Capacity": 5 }
+}

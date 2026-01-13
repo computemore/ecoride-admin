@@ -1,0 +1,15 @@
+{
+  "Volkswagen Polo": { "VehicleType": "compact", "Capacity": 4 },
+  "Volkswagen Golf": { "VehicleType": "compact", "Capacity": 5 },
+  "Volkswagen Passat": { "VehicleType": "sedan", "Capacity": 5 },
+  "Volkswagen Arteon": { "VehicleType": "sedan", "Capacity": 5 },
+  "Volkswagen T-Cross": { "VehicleType": "suv", "Capacity": 5 },
+  "Volkswagen Taigo": { "VehicleType": "suv", "Capacity": 5 },
+  "Volkswagen T-Roc": { "VehicleType": "suv", "Capacity": 5 },
+  "Volkswagen Tiguan": { "VehicleType": "suv", "Capacity": 5 },
+  "Volkswagen Touareg": { "VehicleType": "suv", "Capacity": 5 },
+  "Volkswagen ID.3": { "VehicleType": "compact", "Capacity": 4 },
+  "Volkswagen ID.4": { "VehicleType": "suv", "Capacity": 5 },
+  "Volkswagen ID.5": { "VehicleType": "suv", "Capacity": 5 },
+  "Volkswagen ID.7": { "VehicleType": "suv", "Capacity": 5 }
+}

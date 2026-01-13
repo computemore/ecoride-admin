@@ -1,0 +1,6 @@
+{
+  "Omoda C5": { "VehicleType": "suv", "Capacity": 5 },
+  "Omoda C5 EV": { "VehicleType": "suv", "Capacity": 5 },
+  "Omoda C9": { "VehicleType": "suv", "Capacity": 5 },
+  "Omoda E5": { "VehicleType": "suv", "Capacity": 5 }
+}

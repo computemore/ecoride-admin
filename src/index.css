@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE STYLES (Consistent with demo-client)
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Match autofill text color and font to input styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: #111827 !important;  /* Match input text color */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 0.875rem !important;
+}
+
+html.dark input:-webkit-autofill,
+html.dark input:-webkit-autofill:hover,
+html.dark input:-webkit-autofill:focus,
+html.dark input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #111827 inset !important;
+  box-shadow: 0 0 0 30px #111827 inset !important;
+  -webkit-text-fill-color: #f9fafb !important;
+}
+
+
+/* Optional: Style autofill caret color */
+input:-webkit-autofill::first-line {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.875rem;
+}
+
+.input {
+  @apply text-sm; /* change to text-base / text-lg as needed */
+}
+
+.input {
+  font-size: 0.875rem; /* 14px — change as needed */
+  line-height: 1.25;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep Leaflet map "flat" in the page: controls shouldn't overlay the sticky header */
+.admin-live-map .leaflet-pane {
+  z-index: 10;
+}
+
+.admin-live-map .leaflet-top,
+.admin-live-map .leaflet-bottom {
+  z-index: 20;
+}
+
+/* ============================================
+   COMPONENT CLASSES (Shared across all apps)
+   ============================================ */
+
+/* Buttons - No rounded corners for admin dashboard */
+.btn-primary {
+  @apply bg-[#FF0000] text-white px-4 py-2.5 font-medium hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-800 px-4 py-2.5 font-medium hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700;
+}
+
+.btn-danger {
+  @apply bg-[#FF0000] text-white px-4 py-2.5 font-medium hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-outline {
+  @apply border-2 border-gray-300 text-gray-700 px-4 py-2.5 font-medium hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed dark:hover:bg-gray-900;
+}
+
+.btn-green {
+  @apply border-2 border-green-500 text-green-600 px-4 py-2.5 font-medium hover:bg-green-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-red {
+  @apply border-2 border-[#FF0000] text-[#FF0000] px-4 py-2.5 font-medium hover:bg-red-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Inputs - No rounded corners for admin dashboard */
+.input {
+  @apply w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF0000] focus:border-transparent transition-all text-sm bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700;
+}
+
+/* Input field with gray background - use for inputs WITHOUT icons */
+.input-field {
+  @apply w-full px-4 py-3 bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FF0000] focus:border-transparent transition-all text-sm text-gray-900 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700;
+}
+
+/* Input with left icon - use pl-11 to leave room for the icon */
+.input-with-icon {
+  @apply w-full pl-11 pr-4 py-3 bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FF0000] focus:border-transparent transition-all text-sm text-gray-900 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700;
+}
+
+/* Input with left and right icons - use pl-11 pr-11 */
+.input-with-icons {
+  @apply w-full pl-11 pr-11 py-3 bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#FF0000] focus:border-transparent transition-all text-sm text-gray-900 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700;
+}
+
+/* Cards - No rounded corners for admin dashboard */
+.card {
+  @apply bg-white shadow-sm border border-gray-200 p-6 text-gray-900 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-800;
+}
+
+.card-elevated {
+  @apply bg-white shadow-lg p-6 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+}
+
+/* Badges - No rounded corners */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 text-xs font-medium;
+}
+
+.badge-green {
+  @apply bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-200;
+}
+
+.badge-yellow {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-200;
+}
+
+.badge-red {
+  @apply bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-200;
+}
+
+.badge-gray {
+  @apply bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.badge-blue {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-200;
+}
+
+.badge-primary {
+  @apply bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-200;
+}
+
+.app-content, .page-content, .main-body { 
+  min-height: 100vh; /* ensure content area can expand */
+  background: var(--bg, #fff);
+}
+
+.placeholder-sm::placeholder { font-size: 1rem; }

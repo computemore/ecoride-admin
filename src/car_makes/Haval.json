@@ -1,0 +1,9 @@
+{
+  "Haval Jolion": { "VehicleType": "suv", "Capacity": 5 },
+  "Haval H6": { "VehicleType": "suv", "Capacity": 5 },
+  "Haval H9": { "VehicleType": "suv", "Capacity": 7 },
+  "Haval Dargo": { "VehicleType": "suv", "Capacity": 5 },
+  "Haval Big Dog": { "VehicleType": "suv", "Capacity": 5 },
+  "Haval Cool Dog": { "VehicleType": "suv", "Capacity": 5 },
+  "Haval Raptor": { "VehicleType": "suv", "Capacity": 5 }
+}

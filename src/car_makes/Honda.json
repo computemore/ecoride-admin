@@ -1,0 +1,16 @@
+{
+  "Honda Jazz": { "VehicleType": "compact", "Capacity": 4 },
+  "Honda Fit": { "VehicleType": "compact", "Capacity": 4 },
+  "Honda Civic": { "VehicleType": "sedan", "Capacity": 5 },
+  "Honda Accord": { "VehicleType": "sedan", "Capacity": 5 },
+  "Honda HR-V": { "VehicleType": "suv", "Capacity": 5 },
+  "Honda CR-V": { "VehicleType": "suv", "Capacity": 5 },
+  "Honda ZR-V": { "VehicleType": "suv", "Capacity": 5 },
+  "Honda Pilot": { "VehicleType": "suv", "Capacity": 7 },
+  "Honda Passport": { "VehicleType": "suv", "Capacity": 5 },
+  "Honda Ridgeline": { "VehicleType": "truck", "Capacity": 5 },
+  "Honda Freed": { "VehicleType": "van", "Capacity": 7 },
+  "Honda Odyssey": { "VehicleType": "van", "Capacity": 7 },
+  "Honda e:Ny1": { "VehicleType": "suv", "Capacity": 5 },
+  "Honda Prologue EV": { "VehicleType": "suv", "Capacity": 5 }
+}

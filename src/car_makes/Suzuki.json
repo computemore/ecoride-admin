@@ -1,0 +1,17 @@
+{
+  "Suzuki Celerio": { "VehicleType": "compact", "Capacity": 5 },
+  "Suzuki S-Presso": { "VehicleType": "compact", "Capacity": 5 },
+  "Suzuki Swift": { "VehicleType": "compact", "Capacity": 5 },
+  "Suzuki Dzire": { "VehicleType": "compact", "Capacity": 5 },
+  "Suzuki Ciaz": { "VehicleType": "sedan", "Capacity": 5 },
+  "Suzuki Baleno": { "VehicleType": "compact", "Capacity": 5 },
+  "Suzuki Ignis": { "VehicleType": "suv", "Capacity": 5 },
+  "Suzuki Jimny": { "VehicleType": "suv", "Capacity": 4 },
+  "Suzuki Vitara": { "VehicleType": "suv", "Capacity": 5 },
+  "Suzuki Grand Vitara": { "VehicleType": "suv", "Capacity": 5 },
+  "Suzuki Fronx": { "VehicleType": "suv", "Capacity": 5 },
+  "Suzuki Ertiga": { "VehicleType": "van", "Capacity": 7 },
+  "Suzuki XL6": { "VehicleType": "van", "Capacity": 6 },
+  "Suzuki Eeco": { "VehicleType": "van", "Capacity": 7 },
+  "Suzuki Super Carry": { "VehicleType": "truck", "Capacity": 2 }
+}

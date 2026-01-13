@@ -1,0 +1,14 @@
+{
+  "Kia Picanto": { "VehicleType": "compact", "Capacity": 4 },
+  "Kia Rio": { "VehicleType": "compact", "Capacity": 4 },
+  "Kia Cerato": { "VehicleType": "sedan", "Capacity": 5 },
+  "Kia Stonic": { "VehicleType": "suv", "Capacity": 5 },
+  "Kia Seltos": { "VehicleType": "suv", "Capacity": 5 },
+  "Kia Sportage": { "VehicleType": "suv", "Capacity": 5 },
+  "Kia Sorento": { "VehicleType": "suv", "Capacity": 7 },
+  "Kia Carnival": { "VehicleType": "van", "Capacity": 7 },
+  "Kia Stinger": { "VehicleType": "sedan", "Capacity": 5 },
+  "Kia EV6": { "VehicleType": "suv", "Capacity": 5 },
+  "Kia EV9": { "VehicleType": "suv", "Capacity": 7 },
+  "Kia Niro": { "VehicleType": "suv", "Capacity": 5 }
+}
