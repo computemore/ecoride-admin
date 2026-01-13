@@ -1,0 +1,164 @@
+node_modules/
+dist/
+build/
+demo-client/
+driver-demo/
+.dumps/
+apps/
+services/auth/
+services/notifications/
+services/payments/
+services/telemetry/
+services/trips/
+.helpers/database-updates-from-backups.ps1
+*.log
+*.env
+.env
+.env.*
+!.env.example
+.env
+.env.*
+!.env.example
+.env.local
+.DS_Store
+dumps/
+*.pdf
+dumps/
+*.pdf
+*.pnm
+*.ppm
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.code-workspace
+
+# Dependencies
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Build outputs
+*.tsbuildinfo
+.next/
+out/
+
+# .NET build artifacts
+**/bin/
+**/obj/
+**/*.dll
+**/*.exe
+**/*.pdb
+**/*.dylib
+**/*.so
+!**/packages/build/
+**/.vs/
+**/.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# .NET build artifacts
+**/bin/
+**/obj/
+**/*.dll
+**/*.exe
+**/*.pdb
+**/*.dylib
+**/*.so
+!**/packages/build/
+**/.vs/
+**/.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Mobile
+mobile/ios/Pods/
+mobile/ios/build/
+mobile/android/.gradle/
+mobile/android/app/build/
+mobile/android/build/
+*.apk
+*.ipa
+*.jks
+
+# Do not expose backup files
+.bak
+backups/
+
+# Database
+# *.db
+# *.sqlite
+# *.sqlite3
+# *.db
+# *.sqlite
+# *.sqlite3
+
+# Docker
+# .docker/
+# docker-compose.override.yml
+# .docker/
+# docker-compose.override.yml
+
+# Secrets
+*.pem
+.secrets/
+*.key
+*.crt
+secrets/
+
+# Temporary
+tmp/
+temp/
+.cache/
+dumps/
+dumps/
+
+# OS
+Thumbs.db
+.Spotlight-V100
+.Trashes
+**/*.pdf
+
+# Office temp / lock files (breaks act checkout on Windows when open)
+~$*.xlsx
+~$*.docx
+~$*.pptx
+
+# Others
+QA_CHECKLIST.md
+SECURITY_FIX_SUMMARY.md
+QA_CHECKLIST.md
+ecoride.sln
+firebase.json
+SUMMARY.md
+TEST_REPORT.md
+HashGenerator.cs
+ecoride.sln
+setup.sh
+
+# load testing results
+.scripts/load-test/test_results/**/*.json
+mobile-stub/
+.fake
