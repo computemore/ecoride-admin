@@ -18,7 +18,6 @@ interface PromotionFormData {
   icon: string;
   startsAt: string;
   expiresAt: string;
-  applicableTiers: string;
   eligibleRideTypes: string;
   isReferralPromo: boolean;
 }
@@ -36,7 +35,6 @@ const defaultFormData: PromotionFormData = {
   icon: '🎉',
   startsAt: new Date().toISOString().slice(0, 16),
   expiresAt: '',
-  applicableTiers: 'all',
   eligibleRideTypes: 'all_normal',
   isReferralPromo: false,
 };
@@ -155,7 +153,6 @@ export default function PromotionsPage() {
       icon: promo.icon || '🎉',
       startsAt: formatDateForInput(promo.startsAt),
       expiresAt: formatDateForInput(promo.expiresAt),
-      applicableTiers: promo.applicableTiers,
       eligibleRideTypes: promo.eligibleRideTypes || 'all_normal',
       isReferralPromo: promo.isReferralPromo,
     });
@@ -196,7 +193,6 @@ export default function PromotionsPage() {
         icon: formData.icon || undefined,
         startsAt: formData.startsAt ? new Date(formData.startsAt).toISOString() : undefined,
         expiresAt: formData.expiresAt ? new Date(formData.expiresAt).toISOString() : undefined,
-        applicableTiers: formData.applicableTiers,
         eligibleRideTypes: formData.eligibleRideTypes,
         isReferralPromo: formData.isReferralPromo,
       };
@@ -213,7 +209,6 @@ export default function PromotionsPage() {
         icon: formData.icon || undefined,
         startsAt: formData.startsAt ? new Date(formData.startsAt).toISOString() : undefined,
         expiresAt: formData.expiresAt ? new Date(formData.expiresAt).toISOString() : undefined,
-        applicableTiers: formData.applicableTiers,
         eligibleRideTypes: formData.eligibleRideTypes,
       };
       updateMutation.mutate({ id: selectedPromotion.id, data: request });
@@ -511,10 +506,6 @@ export default function PromotionsPage() {
                       <div className="font-medium">{formatDate(selectedPromotion.expiresAt)}</div>
                     </div>
                     <div>
-                      <div className="text-sm text-gray-500">Applicable Tiers</div>
-                      <div className="font-medium capitalize">{selectedPromotion.applicableTiers.replace('_', ' ')}</div>
-                    </div>
-                    <div>
                       <div className="text-sm text-gray-500">Eligible Ride Types</div>
                       <div className="font-medium capitalize">{(selectedPromotion.eligibleRideTypes || 'all_normal').replace(/_/g, ' ')}</div>
                     </div>
@@ -728,22 +719,6 @@ export default function PromotionsPage() {
                         className="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                       />
                     </div>
-                  </div>
-
-                  {/* Applicable Tiers */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Applicable Tiers
-                    </label>
-                    <select
-                      value={formData.applicableTiers}
-                      onChange={(e) => setFormData({ ...formData, applicableTiers: e.target.value })}
-                      className="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
-                    >
-                      <option value="all">All Tiers</option>
-                      <option value="ecoride_fast">Ecoride Fast Only</option>
-                      <option value="ecoride_luxury">Ecoride Luxury Only</option>
-                    </select>
                   </div>
 
                   {/* Eligible Ride Types */}
